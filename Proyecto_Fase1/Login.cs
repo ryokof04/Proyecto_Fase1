@@ -82,6 +82,7 @@ namespace Proyecto_Fase1
                         {
                             MessageBox.Show("Usuario y/o contraseña incorrectos", "Login Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+                        leer.Close();
                     }
                 }
                 catch (Exception error)

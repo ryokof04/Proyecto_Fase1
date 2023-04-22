@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace Proyecto_Fase1
@@ -72,6 +73,15 @@ namespace Proyecto_Fase1
             registrar.WriteLine(userReg + "-" + passReg + "\n");
             registrar.Close();
             MessageBox.Show("El usuario se ha registrado correctamente. Inicie sesión para continuar.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btn_agregar_Click(object sender, EventArgs e)
+        {
+            if (newpassword.Text == textBox1.Text) CuentasRepetidas();
+            else
+            {
+                MessageBox.Show("Las contraseñas no coinciden, vuelve a intentarlo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

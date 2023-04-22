@@ -40,7 +40,7 @@ namespace Proyecto_Fase1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(58, 173);
+            this.button1.Location = new System.Drawing.Point(61, 152);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -50,7 +50,7 @@ namespace Proyecto_Fase1
             // 
             // btn_salir
             // 
-            this.btn_salir.Location = new System.Drawing.Point(185, 173);
+            this.btn_salir.Location = new System.Drawing.Point(162, 152);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(75, 23);
             this.btn_salir.TabIndex = 1;
@@ -60,14 +60,14 @@ namespace Proyecto_Fase1
             // 
             // user
             // 
-            this.user.Location = new System.Drawing.Point(122, 69);
+            this.user.Location = new System.Drawing.Point(162, 57);
             this.user.Name = "user";
             this.user.Size = new System.Drawing.Size(100, 20);
             this.user.TabIndex = 2;
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(122, 121);
+            this.password.Location = new System.Drawing.Point(162, 96);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(100, 20);
             this.password.TabIndex = 3;
@@ -76,7 +76,7 @@ namespace Proyecto_Fase1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, -37);
+            this.label1.Location = new System.Drawing.Point(55, -25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 4;
@@ -85,7 +85,7 @@ namespace Proyecto_Fase1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 121);
+            this.label2.Location = new System.Drawing.Point(58, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 5;
@@ -94,7 +94,7 @@ namespace Proyecto_Fase1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 69);
+            this.label3.Location = new System.Drawing.Point(58, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 6;
@@ -104,7 +104,7 @@ namespace Proyecto_Fase1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 241);
+            this.ClientSize = new System.Drawing.Size(297, 265);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
