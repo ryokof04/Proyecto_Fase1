@@ -133,6 +133,7 @@ namespace Proyecto_Fase1
             this.Controls.Add(this.btn_agregar);
             this.Name = "User";
             this.Text = "Administracion Usuario";
+            this.Load += new System.EventHandler(this.User_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

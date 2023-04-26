@@ -83,5 +83,10 @@ namespace Proyecto_Fase1
                 MessageBox.Show("Las contraseñas no coinciden, vuelve a intentarlo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void User_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

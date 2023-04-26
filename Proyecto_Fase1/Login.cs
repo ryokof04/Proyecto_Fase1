@@ -32,8 +32,10 @@ namespace Proyecto_Fase1
 
         private void btn_salir_Click(object sender, EventArgs e)
         {
+            //Mensaje de confirmación a la acción
             if (MessageBox.Show("¿Desea Salir del sistema?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
             {
+                //Salir de la aplicación
                 Application.Exit();
             }
         }
@@ -42,18 +44,19 @@ namespace Proyecto_Fase1
         {
             {
                 try
-                {
-                    if (user.Text.Equals(""))
+                {   
+                    if (user.Text.Equals("")) //Validación de las credenciales
                     {
-
+                        //Mensaje de error
                         MessageBox.Show("Usuario incorrecto. Por favor, ingrese uno válido", "Error de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else if (password.Text.Equals(""))
+                    else if (password.Text.Equals("")) //Validación de la contraseña
                     {
+                        //Mensaje de error
                         MessageBox.Show("Contraseña incorrecta. Por favor, ingrese nuevamente", "Error de contrase�a", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
-                    {
+                    {   //Verificación de las credenciales ingresadas
                         user_verificar = user.Text.Trim();
                         contra_verificar = password.Text.Trim();
 
@@ -90,6 +93,11 @@ namespace Proyecto_Fase1
                     MessageBox.Show("Error: " + error);
                 }
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
