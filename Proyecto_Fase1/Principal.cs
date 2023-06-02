@@ -38,5 +38,12 @@ namespace Proyecto_Fase1
             Login Login = new Login();
             Login.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Contabilidad Contabilidad = new Contabilidad();
+            Contabilidad.ShowDialog();
+        }
     }
 }
