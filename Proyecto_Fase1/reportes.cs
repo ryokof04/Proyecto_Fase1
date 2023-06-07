@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto_Fase1
 {
-    public partial class reportes : Form
+    public partial class Reportes : Form
     {
-        public reportes()
+        public Reportes()
         {
             InitializeComponent();
         }
@@ -22,6 +22,11 @@ namespace Proyecto_Fase1
             this.Hide();
             Contabilidad Contabilidad = new Contabilidad();
             Contabilidad.ShowDialog();
+        }
+
+        private void reportes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

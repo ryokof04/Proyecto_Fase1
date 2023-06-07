@@ -221,7 +221,7 @@ namespace Proyecto_Fase1
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            reportes reportes = new reportes();
+            Reportes reportes = new Reportes();
             reportes.ShowDialog();
         }
 
