@@ -44,14 +44,22 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 24);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(108, 361);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(83, 44);
             this.button1.TabIndex = 0;
             this.button1.Text = "Ingresar Producto";
             this.button1.UseVisualStyleBackColor = true;
@@ -62,12 +70,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(319, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(469, 326);
+            this.dataGridView1.Size = new System.Drawing.Size(469, 341);
             this.dataGridView1.TabIndex = 1;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(108, 64);
+            this.txtNombre.Location = new System.Drawing.Point(108, 36);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 2;
@@ -75,35 +83,35 @@
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(108, 110);
+            this.txtDesc.Location = new System.Drawing.Point(108, 72);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(100, 20);
             this.txtDesc.TabIndex = 3;
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(108, 150);
+            this.txtID.Location = new System.Drawing.Point(108, 106);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 4;
             // 
             // txtExistencia
             // 
-            this.txtExistencia.Location = new System.Drawing.Point(108, 189);
+            this.txtExistencia.Location = new System.Drawing.Point(108, 150);
             this.txtExistencia.Name = "txtExistencia";
             this.txtExistencia.Size = new System.Drawing.Size(100, 20);
             this.txtExistencia.TabIndex = 5;
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(108, 237);
+            this.txtValor.Location = new System.Drawing.Point(108, 194);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(100, 20);
             this.txtValor.TabIndex = 6;
             // 
             // txtDepreciacion
             // 
-            this.txtDepreciacion.Location = new System.Drawing.Point(108, 286);
+            this.txtDepreciacion.Location = new System.Drawing.Point(108, 245);
             this.txtDepreciacion.Name = "txtDepreciacion";
             this.txtDepreciacion.Size = new System.Drawing.Size(100, 20);
             this.txtDepreciacion.TabIndex = 7;
@@ -111,62 +119,63 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 71);
+            this.label1.Location = new System.Drawing.Point(12, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Nombre Producto";
+            this.label1.Text = "Nombre Producto:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 116);
+            this.label2.Location = new System.Drawing.Point(13, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Descripcion";
+            this.label2.Text = "Descripcion:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 157);
+            this.label3.Location = new System.Drawing.Point(13, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 10;
-            this.label3.Text = "ID Producto";
+            this.label3.Text = "ID Producto:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 195);
+            this.label4.Location = new System.Drawing.Point(15, 157);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Existencia";
+            this.label4.Text = "Existencia:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 237);
+            this.label5.Location = new System.Drawing.Point(15, 201);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Valor";
+            this.label5.Text = "Valor:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 286);
+            this.label6.Location = new System.Drawing.Point(13, 252);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 13);
+            this.label6.Size = new System.Drawing.Size(73, 13);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Depreciacion";
+            this.label6.Text = "Depreciacion:";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(335, 382);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(456, 371);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(86, 34);
             this.button2.TabIndex = 14;
             this.button2.Text = "Regresar";
             this.button2.UseVisualStyleBackColor = true;
@@ -174,19 +183,63 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(191, 382);
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(658, 371);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(86, 34);
             this.button3.TabIndex = 15;
             this.button3.Text = "Reportes";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(54, 23);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(10, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = " ";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Proyecto_Fase1.Properties.Resources.new_document;
+            this.pictureBox3.Location = new System.Drawing.Point(41, 361);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 44);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 19;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Proyecto_Fase1.Properties.Resources.inventory2;
+            this.pictureBox2.Location = new System.Drawing.Point(606, 372);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(37, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Proyecto_Fase1.Properties.Resources._return;
+            this.pictureBox1.Location = new System.Drawing.Point(385, 372);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(39, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
             // 
             // Contabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label6);
@@ -207,6 +260,9 @@
             this.Text = "Contabilidad";
             this.Load += new System.EventHandler(this.Contabilidad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +286,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

@@ -42,6 +42,7 @@ namespace Proyecto_Fase1
             // 
             // btn_agregar
             // 
+            this.btn_agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_agregar.Location = new System.Drawing.Point(72, 159);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(75, 23);
@@ -52,6 +53,7 @@ namespace Proyecto_Fase1
             // 
             // btn_cancelar
             // 
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancelar.Location = new System.Drawing.Point(209, 159);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
@@ -94,6 +96,7 @@ namespace Proyecto_Fase1
             // 
             // btn_borrar
             // 
+            this.btn_borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_borrar.Location = new System.Drawing.Point(136, 208);
             this.btn_borrar.Name = "btn_borrar";
             this.btn_borrar.Size = new System.Drawing.Size(75, 23);
@@ -132,7 +135,7 @@ namespace Proyecto_Fase1
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_agregar);
             this.Name = "User";
-            this.Text = "Administracion Usuario";
+            this.Text = "Administracion de Usuarios";
             this.Load += new System.EventHandler(this.User_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
