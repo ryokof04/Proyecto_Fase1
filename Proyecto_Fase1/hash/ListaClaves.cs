@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Fase1.clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,10 @@ namespace Proyecto_Fase1.hash
 {
     internal class ListaClaves
     {
-        private Automovil primero = null;
+        private Producto primero = null;
         private int totnodos = 0;
 
-        public ListaAutomoviles()
+        public ListaClaves()
         {
             // Constructor vacío
         }
@@ -21,25 +22,25 @@ namespace Proyecto_Fase1.hash
             get => totnodos;
         }
 
-        public string[] ListaPlacas()
+        public string[] ListaCodigos()
         {
-            string[] placas = new string[totnodos];
-            Automovil aux;
+            string[] ids = new string[totnodos];
+            Producto aux;
             int i = 0;
             aux = primero;
             while (aux != null)
             {
-                placas[i] = aux.placa;
+                ids[i] = aux.Id_producto;
                 i++;
                 aux = aux.sig;
             }
-            return placas;
+            return ids;
         }
 
-        public void Insertarl(Automovil Auto)
+        public void Insertarl(Producto producto)
         {
-            Automovil aux;
-            Auto.CopiarEn(out aux);
+            Producto aux;
+            producto.CopiarEn(out aux);
             //inserta nodo al inicio del contenido de lista
             if (totnodos == 0)
                 primero = aux;
@@ -51,12 +52,12 @@ namespace Proyecto_Fase1.hash
             totnodos++; //incrementa conteo de nodos
         }
 
-        public Automovil RetornarAuto(string Clave)
+        public Producto RetornarProducto(string Clave)
         {
             // ubica a nodo que coincide con Clave/Key (Num. Placa de automovil)
             // si lo encuentra, retorna una copia del mismo.
-            Automovil aux;
-            Automovil encontrado;
+            Producto aux;
+            Producto encontrado;
             if (totnodos > 0)
             {
                 aux = primero;
@@ -64,7 +65,7 @@ namespace Proyecto_Fase1.hash
                 //coincida con la Clave usada por la tabla de dispersion
                 while (aux != null)
                 {
-                    if (aux.placa == Clave) // coincide nodo
+                    if (aux.Id_producto == Clave) // coincide nodo
                     {
                         // hace copia de campos de nodo hacia a nodo a retornar (encontrado)
                         aux.CopiarEn(out encontrado);
@@ -77,10 +78,10 @@ namespace Proyecto_Fase1.hash
             return null; // nodo solicitado no existe en la lista
         }
 
-        public int BuscarAuto(string Clave)
+        public int BuscarProducto(string Clave)
         {
             int c = 1;
-            Automovil aux;
+            Producto aux;
             if (totnodos > 0)
             {
                 aux = primero;
@@ -88,7 +89,7 @@ namespace Proyecto_Fase1.hash
                 //recorre todo el contenido de la lista
                 while (aux != null)
                 {
-                    if (aux.placa == Clave)
+                    if (aux.Id_producto == Clave)
                         return c; // retorna indice de posicion de nodo coincidente
                     c++; //actualiza conteo de indice de posicion
                     aux = aux.sig;
@@ -97,10 +98,10 @@ namespace Proyecto_Fase1.hash
             return 0; //no encontro nodo coincidente con parametro recibido
         }
 
-        public bool RemoverAuto(int indicenodo)
+        public bool RemoverProducto(int indicenodo)
         {
             //borra nodo ubicado en posicion recibida en parametro
-            Automovil aux = primero, aux2;
+            Producto aux = primero, aux2;
             if (totnodos > 0 && indicenodo <= totnodos)
             {
                 if (indicenodo == 1) //primero

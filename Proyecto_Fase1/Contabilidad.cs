@@ -31,9 +31,6 @@ namespace Proyecto_Fase1
             {
                 try
                 {
-                   
-                   
-
                     string query3 = "SELECT MAX(SUBSTRING(id_producto, 2)) FROM descripcion_producto";
                     int ultimoNumeroSecuencial;
 
