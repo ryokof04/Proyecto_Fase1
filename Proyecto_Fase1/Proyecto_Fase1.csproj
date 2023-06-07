@@ -64,7 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clases\ContabilidadModel.cs" />
+    <Compile Include="clases\Producto.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Contabilidad.cs">
       <SubType>Form</SubType>
