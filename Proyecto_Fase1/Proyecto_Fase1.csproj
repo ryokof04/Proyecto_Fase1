@@ -72,6 +72,7 @@
     <Compile Include="Contabilidad.Designer.cs">
       <DependentUpon>Contabilidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="db\DBConexion.cs" />
     <Compile Include="hash\Clave.cs" />
     <Compile Include="hash\ListaClaves.cs" />
     <Compile Include="reportes.cs">

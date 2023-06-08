@@ -45,6 +45,20 @@ namespace Proyecto_Fase1.clases
             Depreciacion = depreciacion;
         }
 
+        public Producto(string nombre, string descripcion, string id_producto, string existencia, string valor, string depreciacion)
+        {
+            int.TryParse(existencia, out int exis);
+            int.TryParse(valor, out int val);
+            int.TryParse(depreciacion, out int dep);
+
+            Nombre = nombre;
+            Descripcion = descripcion;
+            Id_producto = id_producto;
+            Existencia = exis;
+            Valor = val;
+            Depreciacion = dep;
+        }
+
         public string Nombre { get => _nombre; set => _nombre = value; }
         public string Descripcion { get => _descripcion; set => _descripcion = value; }
         public string Id_producto { get => _id_producto; set => _id_producto = value; }
