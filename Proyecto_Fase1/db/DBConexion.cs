@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Proyecto_Fase1.db
 {
@@ -129,6 +130,35 @@ namespace Proyecto_Fase1.db
             {
                 throw ex;
             } finally
+            {
+                CloseConnection();
+            }
+
+            return dataTable;
+        }
+        public DataTable FillTable2()
+        {
+            string query = "SELECT nombre_producto, existencia_product, valor_producto FROM descripcion_producto";
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                OpenConnection();
+                MySqlCommand command = new MySqlCommand(query, connection);
+
+                using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command))
+                {
+                    dataAdapter.Fill(dataTable);
+ //                   adapter.Fill(dataTable);
+                    DataGridView dataGridView = new DataGridView();
+                    dataGridView.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
             {
                 CloseConnection();
             }

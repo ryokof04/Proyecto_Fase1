@@ -143,6 +143,7 @@ namespace Proyecto_Fase1
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.btn_agregar);
             this.Name = "Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

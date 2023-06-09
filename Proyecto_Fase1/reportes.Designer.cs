@@ -73,6 +73,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Reportes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reportes";
             this.Load += new System.EventHandler(this.reportes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
