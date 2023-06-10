@@ -49,12 +49,13 @@ namespace Proyecto_Fase1
                 {
 
                     ListaClaves.InsertarProductos(producto);
+                    DBConexion.InsertarProducto(producto);
                 } else
                 {
                     ListaClaves.ActualizarProducto(id, producto);
+                    DBConexion.ActualizarProducto(producto);
                 }
 
-                //bool res = DBConexion.InsertarProducto(producto);
                 MessageBox.Show("Producto guardado exitosamente");
                 CleanForm();
             } catch (Exception ex)
@@ -84,7 +85,7 @@ namespace Proyecto_Fase1
             dataGridView1.DataSource = ListaClaves.ListaProductos();
         }
 
-        private void Contabilidad_Load(object sender, EventArgs e)
+        private async void Contabilidad_Load(object sender, EventArgs e)
         {
             button1.Enabled = false;
             txtID.ReadOnly = true;
@@ -100,6 +101,11 @@ namespace Proyecto_Fase1
             try
             {
                 // dataGridView1.DataSource = DBConexion.FillTable();
+                Producto[] productos = await DBConexion.GetProductos();
+                foreach (Producto prod in productos)
+                {
+                    ListaClaves.InsertarProductos(prod);
+                }
                 dataGridView1.DataSource = ListaClaves.ListaProductos();
                 // txtID.Text = DBConexion.NextProjectId();
             } catch (Exception ex)
@@ -163,9 +169,16 @@ namespace Proyecto_Fase1
 
         private void txtEliminar_Click(object sender, EventArgs e)
         {
-            int indice = ListaClaves.BuscarProducto(txtID.Text);
-            ListaClaves.RemoverProducto(indice);
-            MessageBox.Show("Producto eliminado exitosamente");
+            try
+            {
+                int indice = ListaClaves.BuscarProducto(txtID.Text);
+                DBConexion.EliminarProducto(txtID.Text);
+                ListaClaves.RemoverProducto(indice);
+                MessageBox.Show("Producto eliminado exitosamente");
+            } catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
 
             CleanForm();
         }

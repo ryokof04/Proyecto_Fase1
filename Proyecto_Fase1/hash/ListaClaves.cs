@@ -24,6 +24,8 @@ namespace Proyecto_Fase1.hash
 
         public string[] ListaCodigos()
         {
+            if (totnodos == 0) return new string[0];
+
             string[] ids = new string[totnodos];
             Producto aux;
             int i = 0;
@@ -39,6 +41,8 @@ namespace Proyecto_Fase1.hash
 
         public Producto[] ListaProductos()
         {
+            if (totnodos == 0) return new Producto[0];
+
             Producto[] ids = new Producto[totnodos];
             Producto aux;
             int i = 0;
@@ -133,7 +137,7 @@ namespace Proyecto_Fase1.hash
                     for (int c = 1; c < indicenodo - 1; c++) aux = aux.sig;
 
                     aux2 = aux.sig; //ubica nodo a borrar
-                    aux.sig = aux2.sig;
+                    if (aux2 != null) aux.sig = aux2.sig;
                     aux2 = null; //borra todo
                 }
                 totnodos--;

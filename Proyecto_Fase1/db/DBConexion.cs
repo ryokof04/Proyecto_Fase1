@@ -165,5 +165,107 @@ namespace Proyecto_Fase1.db
 
             return dataTable;
         }
+
+        async public Task<Producto[]> GetProductos()
+        {
+            string query = "SELECT * FROM descripcion_producto";
+            List<Producto> productos = new List<Producto>();
+
+            try
+            {
+                OpenConnection();
+                MySqlCommand command = new MySqlCommand(query, connection);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Producto producto = new Producto();
+
+                        producto.Id_producto = reader.GetString("id_producto");
+                        producto.Nombre = reader.GetString("nombre_producto");
+                        producto.Descripcion = reader.GetString("descripcion_producto");
+                        producto.Existencia = reader.GetInt32("existencia_producto");
+                        producto.Valor = reader.GetDouble("valor_producto");
+                        producto.ValorRescate = reader.GetDouble("valor_rescate");
+                        producto.Vida = reader.GetInt32("vida_util");
+
+                        productos.Add(producto);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return productos.ToArray();
+        }
+
+        public bool EliminarProducto(string idProducto)
+        {
+            int res = -1;
+            string query = "DELETE FROM descripcion_producto WHERE id_producto = @valor1";
+
+            try
+            {
+                OpenConnection();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@valor1", idProducto);
+
+                    res = command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return res > 0;
+        }
+
+        public bool ActualizarProducto(Producto producto)
+        {
+            int res = -1;
+            string query = "UPDATE descripcion_producto SET nombre_producto = @valor1, descripcion_producto = @valor2, existencia_producto = @valor3, valor_producto = @valor4, valor_rescate = @valor5, vida_util = @valor6 WHERE id_producto = @valor7";
+
+            try
+            {
+                OpenConnection();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@valor1", producto.Nombre);
+                    command.Parameters.AddWithValue("@valor2", producto.Descripcion);
+                    command.Parameters.AddWithValue("@valor3", producto.Existencia);
+                    command.Parameters.AddWithValue("@valor4", producto.Valor);
+                    command.Parameters.AddWithValue("@valor5", producto.ValorRescate);
+                    command.Parameters.AddWithValue("@valor6", producto.Vida);
+                    command.Parameters.AddWithValue("@valor7", producto.Id_producto);
+
+                    res = command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return res > 0;
+        }
     }
 }
