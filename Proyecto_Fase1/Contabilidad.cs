@@ -169,5 +169,57 @@ namespace Proyecto_Fase1
 
             CleanForm();
         }
+
+        private void txtExistencia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter ingresado es un número o una tecla de control
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Mostrar un mensaje de advertencia
+                MessageBox.Show("Solo se pueden ingresar números.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                // Cancelar el evento de pulsación de tecla
+                e.Handled = true;
+            }
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter ingresado es un número o una tecla de control
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Mostrar un mensaje de advertencia
+                MessageBox.Show("Solo se pueden ingresar números.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                // Cancelar el evento de pulsación de tecla
+                e.Handled = true;
+            }
+        }
+
+        private void txtDepreciacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter ingresado es un número o una tecla de control
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Mostrar un mensaje de advertencia
+                MessageBox.Show("Solo se pueden ingresar números.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                // Cancelar el evento de pulsación de tecla
+                e.Handled = true;
+            }
+        }
+
+        private void txtVida_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter ingresado es un número o una tecla de control
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Mostrar un mensaje de advertencia
+                MessageBox.Show("Solo se pueden ingresar números.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                // Cancelar el evento de pulsación de tecla
+                e.Handled = true;
+            }
+        }
     }
 }
