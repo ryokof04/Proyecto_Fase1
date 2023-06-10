@@ -13,8 +13,8 @@ namespace Proyecto_Fase1.clases
         private string _descripcion;
         private string _id_producto;
         private int _existencia;
-        private int _valor;
-        private int _depreciacion;
+        private double _valor;
+        private double _valor_rescate;
         private int _vida;
 
         public Producto sig = null;
@@ -25,11 +25,13 @@ namespace Proyecto_Fase1.clases
             // hacia una nueva instancia
             copiaconta = new Producto();
 
-            copiaconta.Depreciacion = this.Depreciacion;
+            copiaconta.Nombre = this.Nombre;
             copiaconta.Descripcion = this.Descripcion;
+            copiaconta.Id_producto = this.Id_producto;
             copiaconta.Existencia = this.Existencia;
             copiaconta.Valor = this.Valor;
-            copiaconta.Nombre = this.Nombre;
+            copiaconta.ValorRescate = this.ValorRescate;
+            copiaconta.Vida = this.Vida;
         }
 
 
@@ -37,22 +39,22 @@ namespace Proyecto_Fase1.clases
         {
         }
 
-        public Producto(string nombre, string descripcion, string id_producto, int existencia, int valor, int depreciacion, int vida)
+        public Producto(string nombre, string descripcion, string id_producto, int existencia, double valor, double depreciacion, int vida)
         {
             Nombre = nombre;
             Descripcion = descripcion;
             Id_producto = id_producto;
             Existencia = existencia;
             Valor = valor;
-            Depreciacion = depreciacion;
+            ValorRescate = depreciacion;
             Vida = vida;
         }
 
         public Producto(string nombre, string descripcion, string id_producto, string existencia, string valor, string depreciacion, string vida)
         {
             int.TryParse(existencia, out int exis);
-            int.TryParse(valor, out int val);
-            int.TryParse(depreciacion, out int dep);
+            double.TryParse(valor, out double val);
+            double.TryParse(depreciacion, out double dep);
             int.TryParse(vida, out int vid);
 
             Nombre = nombre;
@@ -60,7 +62,7 @@ namespace Proyecto_Fase1.clases
             Id_producto = id_producto;
             Existencia = exis;
             Valor = val;
-            Depreciacion = dep;
+            ValorRescate = dep;
             Vida = vid;
         }
 
@@ -68,8 +70,8 @@ namespace Proyecto_Fase1.clases
         public string Descripcion { get => _descripcion; set => _descripcion = value; }
         public string Id_producto { get => _id_producto; set => _id_producto = value; }
         public int Existencia { get => _existencia; set => _existencia = value; }
-        public int Valor { get => _valor; set => _valor = value; }
-        public int Depreciacion { get => _depreciacion; set => _depreciacion = value; }
+        public double Valor { get => _valor; set => _valor = value; }
+        public double ValorRescate { get => _valor_rescate; set => _valor_rescate = value; }
 
         public int Vida { get => _vida; set => _vida = value; }
     }

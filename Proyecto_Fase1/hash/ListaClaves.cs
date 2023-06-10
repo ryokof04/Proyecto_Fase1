@@ -37,7 +37,28 @@ namespace Proyecto_Fase1.hash
             return ids;
         }
 
-        public void Insertarl(Producto producto)
+        public Producto[] ListaProductos()
+        {
+            Producto[] ids = new Producto[totnodos];
+            Producto aux;
+            int i = 0;
+            aux = primero;
+            while (aux != null)
+            {
+                ids[i] = aux;
+                i++;
+                aux = aux.sig;
+            }
+            return ids;
+        }
+
+        public string getNextId()
+        {
+            int listaCodigos = ListaCodigos().Length + 1;
+            return string.Format("P{0}", listaCodigos.ToString().PadLeft(3, '0'));
+        }
+
+        public void InsertarProductos(Producto producto)
         {
             Producto aux;
             producto.CopiarEn(out aux);

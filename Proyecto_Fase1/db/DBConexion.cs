@@ -83,7 +83,7 @@ namespace Proyecto_Fase1.db
         public bool InsertarProducto(Producto producto)
         {
             int res = -1;
-            string query = "INSERT INTO descripcion_producto (nombre_producto, descripcion_producto, id_producto, existencia_producto, valor_producto, depreciacion_producto) VALUES (@valor1, @valor2, @valor3, @valor4, @valor5, @valor6)";
+            string query = "INSERT INTO descripcion_producto (nombre_producto, descripcion_producto, id_producto, existencia_producto, valor_producto, valor_rescate, vida_util) VALUES (@valor1, @valor2, @valor3, @valor4, @valor5, @valor6, @valor7)";
             try
             {
                 OpenConnection();
@@ -96,7 +96,8 @@ namespace Proyecto_Fase1.db
                     command.Parameters.AddWithValue("@valor3", producto.Id_producto);
                     command.Parameters.AddWithValue("@valor4", producto.Existencia);
                     command.Parameters.AddWithValue("@valor5", producto.Valor);
-                    command.Parameters.AddWithValue("@valor6", producto.Depreciacion);
+                    command.Parameters.AddWithValue("@valor6", producto.ValorRescate);
+                    command.Parameters.AddWithValue("@valor7", producto.Vida);
 
                     // Ejecutar el comando
                     res = command.ExecuteNonQuery();

@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using Proyecto_Fase1.db;
 using Proyecto_Fase1.clases;
+using Proyecto_Fase1.hash;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,18 +20,20 @@ namespace Proyecto_Fase1
     {
         public Conexion connect;
         DBConexion DBConexion;
+        ListaClaves ListaClaves;
 
         public Contabilidad()
         {
             InitializeComponent();
             DBConexion = new DBConexion();
+            ListaClaves = new ListaClaves();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                txtID.Text = DBConexion.NextProjectId();
+                // txtID.Text = DBConexion.NextProjectId();
 
                 string nombre = txtNombre.Text;
                 string desc = txtDesc.Text;
@@ -42,14 +45,12 @@ namespace Proyecto_Fase1
 
                 Producto producto = new Producto(nombre, desc, id, existencia, valor, depreciacion, vida);
 
-                bool res = DBConexion.InsertarProducto(producto);
+                ListaClaves.InsertarProductos(producto);
+                //bool res = DBConexion.InsertarProducto(producto);
 
-                if (res)
-                {
                     MessageBox.Show("Producto Agregado Exitosamente");
-                }
 
-                dataGridView1.DataSource = DBConexion.FillTable();
+                // dataGridView1.DataSource = DBConexion.FillTable();
 
                 txtNombre.Text = string.Empty;
                 txtDesc.Text = string.Empty;
@@ -61,7 +62,9 @@ namespace Proyecto_Fase1
                 txtDepreciacion.Text = string.Empty;
                 txtVida.Text = string.Empty;
 
-                txtID.Text = DBConexion.NextProjectId();
+                // txtID.Text = DBConexion.NextProjectId();
+                txtID.Text = ListaClaves.getNextId();
+                dataGridView1.DataSource = ListaClaves.ListaProductos();
             } catch (Exception ex)
             {
                 // Manejar cualquier excepción que pueda ocurrir durante la conexión o las operaciones en la base de datos
@@ -79,11 +82,14 @@ namespace Proyecto_Fase1
             txtValor.TextChanged += txtNombre_TextChanged;
             txtDepreciacion.TextChanged += txtNombre_TextChanged;
             txtVida.TextChanged += txtNombre_TextChanged;
+            // CARGAR ID
+            txtID.Text = ListaClaves.getNextId();
             // Asignar el DataTable como origen de datos del DataGridView
             try
             {
-                dataGridView1.DataSource = DBConexion.FillTable();
-                txtID.Text = DBConexion.NextProjectId();
+                // dataGridView1.DataSource = DBConexion.FillTable();
+                dataGridView1.DataSource = ListaClaves.ListaProductos();
+                // txtID.Text = DBConexion.NextProjectId();
             } catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
