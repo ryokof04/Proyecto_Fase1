@@ -149,9 +149,8 @@ namespace Proyecto_Fase1.db
                 using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command))
                 {
                     dataAdapter.Fill(dataTable);
- //                   adapter.Fill(dataTable);
-                    DataGridView dataGridView = new DataGridView();
-                    dataGridView.DataSource = dataTable;
+ 
+                   
                 }
             }
             catch (Exception ex)

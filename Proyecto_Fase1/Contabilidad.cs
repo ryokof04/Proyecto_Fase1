@@ -38,8 +38,9 @@ namespace Proyecto_Fase1
                 string existencia = txtExistencia.Text;
                 string valor = txtValor.Text;
                 string depreciacion = txtDepreciacion.Text;
+                string vida = txtVida.Text;
 
-                Producto producto = new Producto(nombre, desc, id, existencia, valor, depreciacion);
+                Producto producto = new Producto(nombre, desc, id, existencia, valor, depreciacion, vida);
 
                 bool res = DBConexion.InsertarProducto(producto);
 
@@ -58,6 +59,7 @@ namespace Proyecto_Fase1
                 txtExistencia.Text = string.Empty;
                 txtValor.Text = string.Empty;
                 txtDepreciacion.Text = string.Empty;
+                txtVida.Text = string.Empty;
 
                 txtID.Text = DBConexion.NextProjectId();
             } catch (Exception ex)
@@ -76,6 +78,7 @@ namespace Proyecto_Fase1
             txtExistencia.TextChanged += txtNombre_TextChanged;
             txtValor.TextChanged += txtNombre_TextChanged;
             txtDepreciacion.TextChanged += txtNombre_TextChanged;
+            txtVida.TextChanged += txtNombre_TextChanged;
             // Asignar el DataTable como origen de datos del DataGridView
             try
             {
@@ -108,6 +111,7 @@ namespace Proyecto_Fase1
                                !string.IsNullOrEmpty(txtDesc.Text) &&
                                !string.IsNullOrEmpty(txtExistencia.Text) &&
                                !string.IsNullOrEmpty(txtValor.Text) &&
+                               !string.IsNullOrEmpty(txtVida.Text) &&
                                !string.IsNullOrEmpty(txtDepreciacion.Text);
 
             // Habilitar o deshabilitar el botón según si todas las TextBox están llenas

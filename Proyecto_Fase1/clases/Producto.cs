@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Proyecto_Fase1.clases
 {
@@ -14,6 +15,7 @@ namespace Proyecto_Fase1.clases
         private int _existencia;
         private int _valor;
         private int _depreciacion;
+        private int _vida;
 
         public Producto sig = null;
 
@@ -35,7 +37,7 @@ namespace Proyecto_Fase1.clases
         {
         }
 
-        public Producto(string nombre, string descripcion, string id_producto, int existencia, int valor, int depreciacion)
+        public Producto(string nombre, string descripcion, string id_producto, int existencia, int valor, int depreciacion, int vida)
         {
             Nombre = nombre;
             Descripcion = descripcion;
@@ -43,13 +45,15 @@ namespace Proyecto_Fase1.clases
             Existencia = existencia;
             Valor = valor;
             Depreciacion = depreciacion;
+            Vida = vida;
         }
 
-        public Producto(string nombre, string descripcion, string id_producto, string existencia, string valor, string depreciacion)
+        public Producto(string nombre, string descripcion, string id_producto, string existencia, string valor, string depreciacion, string vida)
         {
             int.TryParse(existencia, out int exis);
             int.TryParse(valor, out int val);
             int.TryParse(depreciacion, out int dep);
+            int.TryParse(vida, out int vid);
 
             Nombre = nombre;
             Descripcion = descripcion;
@@ -57,6 +61,7 @@ namespace Proyecto_Fase1.clases
             Existencia = exis;
             Valor = val;
             Depreciacion = dep;
+            Vida = vid;
         }
 
         public string Nombre { get => _nombre; set => _nombre = value; }
@@ -65,5 +70,7 @@ namespace Proyecto_Fase1.clases
         public int Existencia { get => _existencia; set => _existencia = value; }
         public int Valor { get => _valor; set => _valor = value; }
         public int Depreciacion { get => _depreciacion; set => _depreciacion = value; }
+
+        public int Vida { get => _vida; set => _vida = value; }
     }
 }
