@@ -95,8 +95,6 @@ namespace Proyecto_Fase1
             txtValor.TextChanged += txtNombre_TextChanged;
             txtDepreciacion.TextChanged += txtNombre_TextChanged;
             txtVida.TextChanged += txtNombre_TextChanged;
-            // CARGAR ID
-            txtID.Text = ListaClaves.getNextId();
             // Asignar el DataTable como origen de datos del DataGridView
             try
             {
@@ -108,6 +106,8 @@ namespace Proyecto_Fase1
                 }
                 dataGridView1.DataSource = ListaClaves.ListaProductos();
                 // txtID.Text = DBConexion.NextProjectId();
+                // CARGAR ID
+                txtID.Text = ListaClaves.getNextId();
             } catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
