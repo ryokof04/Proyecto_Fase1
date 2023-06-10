@@ -101,7 +101,7 @@ namespace Proyecto_Fase1.hash
 
         public int BuscarProducto(string Clave)
         {
-            int c = 1;
+            int c = 0;
             Producto aux;
             if (totnodos > 0)
             {
@@ -141,6 +141,26 @@ namespace Proyecto_Fase1.hash
 
             }
             return false; //nodo en posicion no existe en lista
+        }
+
+        public void ActualizarProducto(string clave, Producto nuevoProducto)
+        {
+            Producto aux = primero;
+
+            while (aux != null)
+            {
+                if (aux.Id_producto == clave)
+                {
+                    aux.Nombre = nuevoProducto.Nombre;
+                    aux.Valor = nuevoProducto.Valor;
+                    aux.ValorRescate = nuevoProducto.ValorRescate;
+                    aux.Vida = nuevoProducto.Vida;
+                    aux.Descripcion = nuevoProducto.Descripcion;
+                    aux.Existencia = nuevoProducto.Existencia;
+                }
+
+                aux = aux.sig;
+            }
         }
     }
 }

@@ -21,6 +21,7 @@ namespace Proyecto_Fase1
         public Conexion connect;
         DBConexion DBConexion;
         ListaClaves ListaClaves;
+        Producto producto;
 
         public Contabilidad()
         {
@@ -43,33 +44,44 @@ namespace Proyecto_Fase1
                 string depreciacion = txtDepreciacion.Text;
                 string vida = txtVida.Text;
 
-                Producto producto = new Producto(nombre, desc, id, existencia, valor, depreciacion, vida);
+                producto = new Producto(nombre, desc, id, existencia, valor, depreciacion, vida);
+                if (ListaClaves.RetornarProducto(id) == null)
+                {
 
-                ListaClaves.InsertarProductos(producto);
+                    ListaClaves.InsertarProductos(producto);
+                } else
+                {
+                    ListaClaves.ActualizarProducto(id, producto);
+                }
+
                 //bool res = DBConexion.InsertarProducto(producto);
-
-                    MessageBox.Show("Producto Agregado Exitosamente");
-
-                // dataGridView1.DataSource = DBConexion.FillTable();
-
-                txtNombre.Text = string.Empty;
-                txtDesc.Text = string.Empty;
-                txtNombre.Text = string.Empty;
-                txtDesc.Text = string.Empty;
-                txtID.Text = string.Empty;
-                txtExistencia.Text = string.Empty;
-                txtValor.Text = string.Empty;
-                txtDepreciacion.Text = string.Empty;
-                txtVida.Text = string.Empty;
-
-                // txtID.Text = DBConexion.NextProjectId();
-                txtID.Text = ListaClaves.getNextId();
-                dataGridView1.DataSource = ListaClaves.ListaProductos();
+                MessageBox.Show("Producto guardado exitosamente");
+                CleanForm();
             } catch (Exception ex)
             {
                 // Manejar cualquier excepción que pueda ocurrir durante la conexión o las operaciones en la base de datos
                 Console.WriteLine("Error: " + ex.Message);
             }
+        }
+
+        private void CleanForm()
+        {
+
+            // dataGridView1.DataSource = DBConexion.FillTable();
+
+            txtNombre.Text = string.Empty;
+            txtDesc.Text = string.Empty;
+            txtNombre.Text = string.Empty;
+            txtDesc.Text = string.Empty;
+            txtID.Text = string.Empty;
+            txtExistencia.Text = string.Empty;
+            txtValor.Text = string.Empty;
+            txtDepreciacion.Text = string.Empty;
+            txtVida.Text = string.Empty;
+
+            // txtID.Text = DBConexion.NextProjectId();
+            txtID.Text = ListaClaves.getNextId();
+            dataGridView1.DataSource = ListaClaves.ListaProductos();
         }
 
         private void Contabilidad_Load(object sender, EventArgs e)
@@ -122,6 +134,40 @@ namespace Proyecto_Fase1
 
             // Habilitar o deshabilitar el botón según si todas las TextBox están llenas
             button1.Enabled = todasLlenas;
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Get the clicked DataGridViewRow
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                // Access the data in the clicked row
+                // You can access the data using the index of the column or the column name
+                string cellValue = row.Cells["Id_Producto"].Value.ToString();
+                // Alternatively, you can use the column index:
+                // string cellValue = row.Cells[columnIndex].Value.ToString();
+
+                producto = ListaClaves.RetornarProducto(cellValue);
+
+                txtNombre.Text = producto.Nombre;
+                txtDesc.Text = producto.Descripcion;
+                txtExistencia.Text = producto.Existencia.ToString();
+                txtValor.Text = producto.Valor.ToString();
+                txtDepreciacion.Text = producto.ValorRescate.ToString();
+                txtVida.Text = producto.Vida.ToString();
+                txtID.Text = producto.Id_producto;
+            }
+        }
+
+        private void txtEliminar_Click(object sender, EventArgs e)
+        {
+            int indice = ListaClaves.BuscarProducto(txtID.Text);
+            ListaClaves.RemoverProducto(indice);
+            MessageBox.Show("Producto eliminado exitosamente");
+
+            CleanForm();
         }
     }
 }
